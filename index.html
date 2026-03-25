@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSW 2026 Sponsorship Recommendation — Caruso Ventures</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        /* ===== DESIGN SYSTEM ===== */
+        :root {
+            --bg: #faf9f7;
+            --surface: #ffffff;
+            --text: #1a1a2e;
+            --text-muted: #5a5a72;
+            --accent: #2d6a4f;
+            --accent-light: #d8f3dc;
+            --accent-dark: #1b4332;
+            --warm: #e76f51;
+            --warm-light: #fce8e3;
+            --gold: #dda15e;
+            --gold-light: #fefae0;
+            --blue: #457b9d;
+            --blue-light: #e3eff5;
+            --border: #e8e6e1;
+            --shadow: 0 2px 16px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            font-size: 18px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 50%, #40916c 100%);
+            color: white;
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 40%);
+        }
+        .hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 20px;
+            border-radius: 100px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 64px 0;
+        }
+
+        section + section {
+            border-top: 1px solid var(--border);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: var(--accent-dark);
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .section-subtitle {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        p { margin-bottom: 16px; }
+        p:last-child { margin-bottom: 0; }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+        }
+        .card.highlight {
+            border-color: var(--accent);
+            border-width: 2px;
+            position: relative;
+        }
+        .card.highlight::before {
+            content: '★ RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: var(--accent);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 14px;
+            border-radius: 100px;
+        }
+
+        /* ===== EXPLAINER BOX ===== */
+        .explainer {
+            background: var(--gold-light);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 24px 28px;
+            margin: 28px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .explainer strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #7c6a0a;
+        }
+
+        /* ===== INFO BOX ===== */
+        .info-box {
+            background: var(--blue-light);
+            border-left: 4px solid var(--blue);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 24px 28px;
+            margin: 28px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+        }
+        .info-box strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--blue);
+        }
+
+        /* ===== WARNING BOX ===== */
+        .warning-box {
+            background: var(--warm-light);
+            border-left: 4px solid var(--warm);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 24px 28px;
+            margin: 28px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+        }
+        .warning-box strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--warm);
+        }
+
+        /* ===== TIER GRID ===== */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+        .tier {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .tier:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .tier.selected {
+            border: 2px solid var(--accent);
+            background: var(--accent-light);
+        }
+        .tier.dimmed { opacity: 0.55; }
+        .tier-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin: 8px 0 4px;
+        }
+        .tier-name {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .tier-desc {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+        .tier-tag {
+            display: inline-block;
+            margin-top: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+        .tier-tag.yes { background: var(--accent); color: white; }
+        .tier-tag.no { background: #e0e0e0; color: #666; }
+
+        /* ===== COMPARISON TABLE ===== */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 15px;
+        }
+        .compare-table th, .compare-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .compare-table th {
+            background: var(--accent-dark);
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .compare-table tr:nth-child(even) { background: #f7f7f5; }
+        .compare-table tr.highlight-row { background: var(--accent-light); font-weight: 600; }
+
+        /* ===== MERMAID ===== */
+        .mermaid-wrapper {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            margin: 28px 0;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+        }
+        .mermaid-wrapper .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+        .mermaid-caption {
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            position: relative;
+            margin: 32px 0;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent-light);
+            border-radius: 3px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border: 3px solid var(--accent-light);
+            border-radius: 50%;
+        }
+        .timeline-date {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 4px 0;
+        }
+        .timeline-desc {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        /* ===== STAT ROW ===== */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+        .stat {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            line-height: 1;
+        }
+        .stat-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* ===== DECISION OPTIONS ===== */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 28px 0;
+        }
+        @media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
+        .option {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            background: var(--surface);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 15px;
+        }
+        .option.preferred {
+            border: 2px solid var(--accent);
+            background: var(--accent-light);
+        }
+        .option-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .option.preferred .option-label { color: var(--accent-dark); }
+        .option:not(.preferred) .option-label { color: var(--text-muted); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        /* ===== NAV ===== */
+        .toc {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 249, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 12px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .toc-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .toc a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .toc a:hover { color: var(--accent); }
+        .toc-brand {
+            font-weight: 700;
+            color: var(--accent-dark) !important;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="toc">
+    <div class="toc-inner">
+        <a href="#" class="toc-brand">CV</a>
+        <a href="#big-picture">Big Picture</a>
+        <a href="#what-is-bsw">What is BSW?</a>
+        <a href="#tiers">Sponsorship Tiers</a>
+        <a href="#recommendation">Recommendation</a>
+        <a href="#why">Why This Level</a>
+        <a href="#call-notes">Call Notes</a>
+        <a href="#csw-note">CSW Note</a>
+        <a href="#decision">Decision</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Sponsorship Recommendation</div>
+        <h1>Boulder Startup Week 2026</h1>
+        <p>A recommendation from Cody to Dan on how Caruso Ventures should show up at BSW this year — and why.</p>
+    </div>
+</header>
+
+<!-- ===== SECTION: BIG PICTURE ===== -->
+<section id="big-picture">
+    <div class="container">
+        <div class="section-subtitle">Starting from the top</div>
+        <h2>What is this document about?</h2>
+        <p>
+            Every year, <strong>Boulder Startup Week</strong> (BSW) happens in Boulder, Colorado. It's a week-long event where startups, investors, and the tech community come together for talks, panels, and networking.
+        </p>
+        <p>
+            <strong>Caruso Ventures</strong> (that's us — "CV") has supported BSW before. Now the question is: <em>How much should we invest this year?</em>
+        </p>
+        <p>
+            This page walks through <strong>Cody's recommendation to Dan</strong> — what sponsorship level makes sense, why, and what else we should do beyond just writing a check.
+        </p>
+
+        <div class="explainer">
+            <strong>What does "sponsorship" mean?</strong>
+            When a company "sponsors" an event, it means they pay money to support it. In return, the sponsor usually gets their name/logo featured, speaking opportunities, or other perks. Think of it like how a company's logo appears on a sports jersey — they're paying to be associated with the event and support it.
+        </div>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+flowchart LR
+    A["🏢 Caruso Ventures<br/>(Us — the Sponsor)"] -->|"Gives money +<br/>hosts panels"| B["🎉 Boulder Startup Week<br/>(The Event)"]
+    B -->|"Gives visibility +<br/>brand presence"| A
+    B -->|"Provides programming<br/>for attendees"| C["👥 Boulder Community<br/>(Founders, Investors, Techies)"]
+    C -->|"Grows our<br/>reputation"| A
+
+    style A fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px,color:#1a1a2e
+    style B fill:#fefae0,stroke:#dda15e,stroke-width:2px,color:#1a1a2e
+    style C fill:#e3eff5,stroke:#457b9d,stroke-width:2px,color:#1a1a2e
+            </div>
+            <div class="mermaid-caption">How sponsorship works — money and effort flow one way, visibility and community goodwill flow back.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION: WHAT IS BSW ===== -->
+<section id="what-is-bsw">
+    <div class="container">
+        <div class="section-subtitle">Background</div>
+        <h2>What is Boulder Startup Week?</h2>
+        <p>
+            Boulder Startup Week is a <strong>free, community-run event</strong> that happens every May in Boulder, Colorado. It's a week of talks, panels, workshops, parties, and pitch competitions — all focused on startups and innovation.
+        </p>
+        <p>
+            It's organized by <strong>Glider</strong>, a nonprofit that also runs TEDx Boulder. Each event under Glider raises its own budget independently, so BSW needs sponsors like us to fund itself each year.
+        </p>
+
+        <div class="stat-row">
+            <div class="stat">
+                <div class="stat-number">May 4–8</div>
+                <div class="stat-label">2026 Dates</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">~4,000</div>
+                <div class="stat-label">Attendees Last Year</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4–5K</div>
+                <div class="stat-label">Expected This Year</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">~500</div>
+                <div class="stat-label">3 Years Ago</div>
+            </div>
+        </div>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+xychart-beta
+    title "BSW Attendance Growth Over Time"
+    x-axis ["3 Years Ago", "2 Years Ago", "Last Year (2025)", "Expected 2026"]
+    y-axis "Estimated Attendees" 0 --> 6000
+    bar [500, 2000, 4000, 5000]
+            </div>
+            <div class="mermaid-caption">BSW attendance has grown 8x in three years — from ~500 to an expected 4,000–5,000.</div>
+        </div>
+
+        <div class="explainer">
+            <strong>Why does this matter?</strong>
+            BSW is growing fast. That means more people will see our name, hear our panels, and associate Caruso Ventures with Boulder's startup community. Even a modest sponsorship puts us in front of thousands of engaged founders and investors.
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION: TIERS ===== -->
+<section id="tiers">
+    <div class="container">
+        <div class="section-subtitle">The Options</div>
+        <h2>BSW Sponsorship Tiers</h2>
+        <p>
+            BSW offers different "tiers" of sponsorship — think of them like levels. The more you pay, the more perks you get. Here's what's available:
+        </p>
+
+        <div class="explainer">
+            <strong>What's a "tier"?</strong>
+            A tier is just a level or package. It's like choosing between a basic, standard, or premium plan for a subscription service. Each level has a different price and different benefits.
+        </div>
+
+        <div class="tier-grid">
+            <div class="tier selected">
+                <div class="tier-name">Community Builder</div>
+                <div class="tier-price">$1,000</div>
+                <div class="tier-desc">Basic sponsorship level. Logo visibility and general event support.</div>
+                <div class="tier-tag yes">Our Pick</div>
+            </div>
+            <div class="tier dimmed">
+                <div class="tier-name">Pitch Competition</div>
+                <div class="tier-price">$3,000</div>
+                <div class="tier-desc">Sponsors the startup pitch competition. Your brand tied to the contest.</div>
+                <div class="tier-tag no">Not Aligned</div>
+            </div>
+            <div class="tier dimmed">
+                <div class="tier-name">Social Event</div>
+                <div class="tier-price">$6,000</div>
+                <div class="tier-desc">Funds an evening social event. Co-branded party or mixer.</div>
+                <div class="tier-tag no">Rather DIY</div>
+            </div>
+            <div class="tier dimmed">
+                <div class="tier-name">Presenting Sponsor</div>
+                <div class="tier-price">$20,000</div>
+                <div class="tier-desc">Top-level — new tier this year. Maximum visibility and branding.</div>
+                <div class="tier-tag no">Too Much</div>
+            </div>
+        </div>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+flowchart TD
+    Start["Which tier<br/>should CV choose?"] --> Q1{"Is the pitch competition<br/>high quality & aligned<br/>with our mission?"}
+    Q1 -->|"No — it feels low quality"| Skip3K["❌ Skip $3K Tier"]
+    Q1 -->|"Yes"| Maybe3K["Consider $3K"]
+
+    Start --> Q2{"Do we want to<br/>co-brand a party<br/>with BSW?"}
+    Q2 -->|"No — we'd rather<br/>host our own events"| Skip6K["❌ Skip $6K Tier"]
+    Q2 -->|"Yes"| Maybe6K["Consider $6K"]
+
+    Start --> Q3{"Is Boulder Roots<br/>our #1 priority<br/>this year?"}
+    Q3 -->|"Yes — we can't<br/>overextend"| Pick1K["✅ $1K Community Builder<br/>+ host panels ourselves"]
+
+    style Start fill:#e3eff5,stroke:#457b9d,stroke-width:2px,color:#1a1a2e
+    style Pick1K fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px,color:#1a1a2e
+    style Skip3K fill:#fce8e3,stroke:#e76f51,stroke-width:1px,color:#1a1a2e
+    style Skip6K fill:#fce8e3,stroke:#e76f51,stroke-width:1px,color:#1a1a2e
+    style Maybe3K fill:#fefae0,stroke:#dda15e,stroke-width:1px,color:#1a1a2e
+    style Maybe6K fill:#fefae0,stroke:#dda15e,stroke-width:1px,color:#1a1a2e
+            </div>
+            <div class="mermaid-caption">The decision tree: Each higher tier was considered and ruled out for specific reasons.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION: RECOMMENDATION ===== -->
+<section id="recommendation">
+    <div class="container">
+        <div class="section-subtitle">The Recommendation</div>
+        <h2>"Community Builder" ($1,000) + In-Kind Panels</h2>
+
+        <div class="card highlight">
+            <h3>What we're proposing</h3>
+            <p>
+                Pay <strong>$1,000</strong> for the Community Builder sponsorship tier, and then <strong>host 2–3 panels</strong> during BSW week ourselves. These panels would cover topics close to our mission — things like:
+            </p>
+            <ul style="margin: 16px 0 16px 24px; line-height: 2;">
+                <li><strong>Deep tech</strong> — cutting-edge technology companies</li>
+                <li><strong>AI</strong> — artificial intelligence and its impact</li>
+                <li><strong>Boulder's creative economy</strong> — arts, culture, and innovation</li>
+                <li><strong>Founder-led storytelling</strong> — real stories from real entrepreneurs</li>
+            </ul>
+            <p>
+                We'd use our network to bring in <strong>high-caliber speakers</strong> — real founders, investors, and experts — to make these panels genuinely valuable for BSW attendees.
+            </p>
+        </div>
+
+        <div class="explainer">
+            <strong>What does "in-kind" mean?</strong>
+            "In-kind" support means contributing <em>services or effort</em> instead of (or alongside) money. Instead of just handing over cash, we're saying: "We'll also volunteer our time and network to make the event better." In this case, hosting panels = in-kind support. It's often more valuable than the check itself.
+        </div>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+flowchart LR
+    subgraph "💰 Financial"
+        A["$1,000<br/>Community Builder<br/>Sponsorship"]
+    end
+
+    subgraph "🎤 In-Kind (Our Effort)"
+        B["Panel 1<br/>Deep Tech / AI"]
+        C["Panel 2<br/>Founder Stories"]
+        D["Panel 3<br/>Creative Economy"]
+    end
+
+    subgraph "📣 Bonus"
+        E["Promote<br/>Boulder Roots"]
+    end
+
+    A --> F["BSW 2026"]
+    B --> F
+    C --> F
+    D --> F
+    E --> F
+
+    style F fill:#fefae0,stroke:#dda15e,stroke-width:2px,color:#1a1a2e
+    style A fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px,color:#1a1a2e
+    style B fill:#e3eff5,stroke:#457b9d,stroke-width:1px,color:#1a1a2e
+    style C fill:#e3eff5,stroke:#457b9d,stroke-width:1px,color:#1a1a2e
+    style D fill:#e3eff5,stroke:#457b9d,stroke-width:1px,color:#1a1a2e
+    style E fill:#fce8e3,stroke:#e76f51,stroke-width:1px,color:#1a1a2e
+            </div>
+            <div class="mermaid-caption">Our total contribution: $1,000 in cash + 2–3 panels + Boulder Roots promotion. We show up as contributors, not just check-writers.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION: WHY ===== -->
+<section id="why">
+    <div class="container">
+        <div class="section-subtitle">The Reasoning</div>
+        <h2>Why This Level — And Not More?</h2>
+
+        <h3 style="margin-top: 32px;">1. Boulder Roots comes first</h3>
+        <p>
+            <strong>Boulder Roots</strong> is Caruso Ventures' flagship community initiative this year. It demands the largest share of our attention, budget, and team time. We need to be careful about spreading ourselves too thin.
+        </p>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+pie title "Where CV's Resources Should Go in 2026"
+    "Boulder Roots (Flagship)" : 60
+    "BSW Sponsorship + Panels" : 15
+    "Colorado Startup Week (Sept)" : 15
+    "Other Initiatives" : 10
+            </div>
+            <div class="mermaid-caption">Boulder Roots is our main event this year. BSW should be meaningful but not overextended.</div>
+        </div>
+
+        <h3 style="margin-top: 40px;">2. Compared to last year</h3>
+        <p>
+            Here's what we did in 2025 vs. what's being recommended for 2026:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>2025 (Last Year)</th>
+                    <th>2026 (Proposed)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Money</strong></td>
+                    <td>$2,000 grant</td>
+                    <td>$1,000 sponsorship</td>
+                </tr>
+                <tr>
+                    <td><strong>Panels Hosted</strong></td>
+                    <td>2 panels (Cody + Zeb)</td>
+                    <td>2–3 panels</td>
+                </tr>
+                <tr>
+                    <td><strong>Other</strong></td>
+                    <td>Dan had a quantum panel<br/>(via TechStars, not BSW)</td>
+                    <td>Promote Boulder Roots<br/>at BSW events</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>Net Effect</strong></td>
+                    <td>Good presence</td>
+                    <td>Similar or better presence,<br/>less money spent</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="explainer">
+            <strong>The key insight</strong>
+            We're actually <em>increasing</em> our in-kind contribution (more panels) while <em>decreasing</em> the cash. The idea is: our people, network, and content are more valuable to BSW than an extra $1,000–$2,000. We show up as quality contributors to the programming, not just as a name on a banner.
+        </div>
+
+        <h3 style="margin-top: 40px;">3. The higher tiers don't fit</h3>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+flowchart TB
+    subgraph tier3["$3,000 — Pitch Competition"]
+        T3["Sponsors the startup<br/>pitch competition"]
+        T3 --> T3R["❌ The pitch competition<br/>doesn't feel high-quality<br/>or aligned enough"]
+    end
+
+    subgraph tier6["$6,000 — Social Event"]
+        T6["Funds an evening<br/>party/mixer"]
+        T6 --> T6R["❌ We'd rather host our<br/>OWN event on our terms<br/>(tie it to Boulder Roots)"]
+    end
+
+    subgraph tier20["$20,000 — Presenting Sponsor"]
+        T20["Top-tier visibility,<br/>new this year"]
+        T20 --> T20R["❌ Way beyond what<br/>makes sense given<br/>our priorities"]
+    end
+
+    style T3R fill:#fce8e3,stroke:#e76f51,stroke-width:1px,color:#1a1a2e
+    style T6R fill:#fce8e3,stroke:#e76f51,stroke-width:1px,color:#1a1a2e
+    style T20R fill:#fce8e3,stroke:#e76f51,stroke-width:1px,color:#1a1a2e
+    style tier3 fill:#faf9f7,stroke:#e8e6e1,color:#1a1a2e
+    style tier6 fill:#faf9f7,stroke:#e8e6e1,color:#1a1a2e
+    style tier20 fill:#faf9f7,stroke:#e8e6e1,color:#1a1a2e
+            </div>
+            <div class="mermaid-caption">Each higher tier was considered and rejected for a specific strategic reason — not just cost.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION: CALL NOTES ===== -->
+<section id="call-notes">
+    <div class="container">
+        <div class="section-subtitle">Intelligence Gathered</div>
+        <h2>What We Learned from BSW's Team</h2>
+        <p>
+            On <strong>February 11, 2026</strong>, we had a call with Holly and Melissa from the BSW/Glider team. Here's what we took away:
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Growth is Real</div>
+                <div class="timeline-title">Attendance grew from ~500 to ~4,000</div>
+                <div class="timeline-desc">BSW has seen 8x growth in 3 years. They expect 4,000–5,000 this year. The event is getting real traction.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">But Ambition Felt Limited</div>
+                <div class="timeline-title">The team has a "scarcity mindset"</div>
+                <div class="timeline-desc">Despite the growth, the BSW team hadn't fully imagined what's possible with more funding or bolder programming. They're thinking small relative to the opportunity.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Sponsorship is Evolving</div>
+                <div class="timeline-title">New $20K top tier (up from $10K max)</div>
+                <div class="timeline-desc">They've updated their sponsorship levels and are still in early outreach. At the time of our call, they'd just gotten their first paid sponsor the day before.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Budget is Tight</div>
+                <div class="timeline-title">Lean operation under the Glider nonprofit</div>
+                <div class="timeline-desc">Each Glider event raises its own money independently. The pitch competition prize pool (~$10K) is the main thing that flexes based on sponsor dollars.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Content Direction is Promising</div>
+                <div class="timeline-title">They want: deep tech, real founder stories, creativity</div>
+                <div class="timeline-desc">All things that align with what we'd contribute. But the plan for how to get there still felt early and unformed.</div>
+            </div>
+        </div>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+quadrantChart
+    title BSW Assessment
+    x-axis "Low Alignment with CV" --> "High Alignment with CV"
+    y-axis "Low Execution Quality" --> "High Execution Quality"
+    "Community Spirit": [0.80, 0.70]
+    "Content Direction": [0.75, 0.40]
+    "Growth Trajectory": [0.60, 0.65]
+    "Org Ambition": [0.45, 0.30]
+    "Sponsor Structure": [0.50, 0.45]
+            </div>
+            <div class="mermaid-caption">Where BSW lands: Strong community values and alignment with us, but organizational execution and ambition could be higher. This is why we lead with content quality, not cash.</div>
+        </div>
+
+        <div class="info-box">
+            <strong>What does this tell us?</strong>
+            BSW's heart is in the right place. The community values and content direction align perfectly with what Caruso Ventures cares about. But the team is still building its organizational muscle. This reinforces our strategy: contribute <em>quality programming</em> (which they need) rather than throwing more money at an organization still figuring out how to deploy it effectively.
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION: CSW NOTE ===== -->
+<section id="csw-note">
+    <div class="container">
+        <div class="section-subtitle">Important Context</div>
+        <h2>The Colorado Startup Week Factor</h2>
+
+        <div class="warning-box">
+            <strong>Heads up — there's a bigger commitment on the books</strong>
+            Separately from BSW (Boulder), there's <strong>Colorado Startup Week</strong> (CSW) — a statewide event in <strong>September</strong>. CV has a verbal commitment (via email from JC) of <strong>$50,000 per year for 5 years</strong>. We're in year 2 of 5. However, <em>nothing has been formally signed</em> to our knowledge.
+        </div>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+timeline
+    title CV's Event Calendar — 2026
+    section Spring
+        BSW (May 4-8) : $1K sponsorship + panels
+                      : Boulder-focused
+                      : Community event
+    section Summer
+        Boulder Roots : 🌟 Flagship initiative
+                      : Main priority for 2026
+                      : Most budget & team bandwidth
+    section Fall
+        CSW (September) : $50K/yr commitment (Year 2 of 5)
+                        : Statewide event
+                        : More bandwidth after Roots
+            </div>
+            <div class="mermaid-caption">How the year unfolds: BSW is first but smallest. Boulder Roots is the main event. CSW comes later when we'll have more capacity.</div>
+        </div>
+
+        <div class="explainer">
+            <strong>Why does this matter for BSW?</strong>
+            With a $50K/year CSW commitment already on the books (even if unsigned), it makes even more sense to keep BSW at a modest financial level. We're already committing significant dollars to startup-week-style events — we don't need to double down at BSW too. Save the energy for Boulder Roots and CSW.
+        </div>
+
+        <div class="stat-row">
+            <div class="stat">
+                <div class="stat-number">$1K</div>
+                <div class="stat-label">BSW (May)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" style="font-size: 1.5rem;">TBD</div>
+                <div class="stat-label">Boulder Roots (Summer)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$50K</div>
+                <div class="stat-label">CSW (September)</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION: DECISION ===== -->
+<section id="decision">
+    <div class="container">
+        <div class="section-subtitle">Your Call</div>
+        <h2>What Should We Do?</h2>
+        <p>
+            Here's the bottom line, followed by the options for Dan to choose from:
+        </p>
+
+        <div class="card highlight" style="margin-top: 28px;">
+            <h3>The Bottom Line</h3>
+            <p>
+                <strong>Community Builder sponsorship ($1,000) + 2–3 high-quality panels</strong> lets us stay visible, support an event we care about, and contribute meaningfully — without over-investing when Boulder Roots is where our energy should be focused.
+            </p>
+        </div>
+
+        <div class="mermaid-wrapper">
+            <div class="mermaid">
+flowchart TD
+    R["Cody's Recommendation:<br/>$1K + Panels"] --> D{"Dan's Decision"}
+
+    D -->|"Option A"| A["✅ Supportive<br/>Communicate sponsorship &<br/>brainstorm panel ideas as a team"]
+    D -->|"Option B"| B["🔼 Explore Higher Tier<br/>Look at something above<br/>the $1K Community Builder"]
+    D -->|"Option C"| C["🚫 Skip This Year<br/>Don't get involved<br/>with BSW in 2026"]
+    D -->|"Option D"| DD["💬 Discuss / Other<br/>Talk it through more<br/>before deciding"]
+
+    style R fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px,color:#1a1a2e
+    style D fill:#e3eff5,stroke:#457b9d,stroke-width:2px,color:#1a1a2e
+    style A fill:#d8f3dc,stroke:#2d6a4f,stroke-width:1px,color:#1a1a2e
+    style B fill:#fefae0,stroke:#dda15e,stroke-width:1px,color:#1a1a2e
+    style C fill:#fce8e3,stroke:#e76f51,stroke-width:1px,color:#1a1a2e
+    style DD fill:#f5f5f5,stroke:#999,stroke-width:1px,color:#1a1a2e
+            </div>
+            <div class="mermaid-caption">The four paths forward — Cody recommends Option A.</div>
+        </div>
+
+        <div class="options-grid">
+            <div class="option preferred">
+                <div class="option-label">Option A — Recommended</div>
+                <strong>Supportive. Go with $1K + panels.</strong>
+                <p style="margin-top: 8px; font-size: 14px; color: var(--text-muted);">Communicate the sponsorship and brainstorm panel ideas as a team.</p>
+            </div>
+            <div class="option">
+                <div class="option-label">Option B</div>
+                <strong>Explore a higher sponsorship level.</strong>
+                <p style="margin-top: 8px; font-size: 14px; color: var(--text-muted);">Go above the $1,000 Community Builder tier.</p>
+            </div>
+            <div class="option">
+                <div class="option-label">Option C</div>
+                <strong>Let's not get involved this year.</strong>
+                <p style="margin-top: 8px; font-size: 14px; color: var(--text-muted);">Skip BSW 2026 entirely.</p>
+            </div>
+            <div class="option">
+                <div class="option-label">Option D</div>
+                <strong>Discuss / Other.</strong>
+                <p style="margin-top: 8px; font-size: 14px; color: var(--text-muted);">Let's talk more before deciding.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p><strong>Caruso Ventures</strong> — BSW 2026 Sponsorship Recommendation</p>
+    <p>Prepared by Cody &middot; March 2026</p>
+</footer>
+
+<!-- Initialize Mermaid -->
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+            primaryColor: '#d8f3dc',
+            primaryTextColor: '#1a1a2e',
+            primaryBorderColor: '#2d6a4f',
+            lineColor: '#5a5a72',
+            secondaryColor: '#e3eff5',
+            tertiaryColor: '#fefae0',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+            fontSize: '14px'
+        },
+        flowchart: {
+            htmlLabels: true,
+            curve: 'basis'
+        }
+    });
+</script>
+
+</body>
+</html>
