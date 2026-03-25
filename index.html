@@ -410,7 +410,7 @@
         /* ═══ TIER CARDS ═══ */
         .tier-stack {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
             gap: 16px;
             margin: 40px 0;
         }
@@ -493,6 +493,121 @@
             margin-top: 20px;
             font-style: italic;
             letter-spacing: 0.3px;
+        }
+
+        /* ═══ CUSTOM BAR CHART ═══ */
+        .bar-chart {
+            padding: 8px 0;
+        }
+        .bar-chart-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--ink-soft);
+        }
+        .bar-chart-area {
+            position: relative;
+            height: 280px;
+            display: flex;
+        }
+        .bar-chart-gridlines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .gridline {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-top: 1px dashed var(--paper-dark);
+        }
+        .gridline span {
+            position: absolute;
+            left: 0;
+            top: -8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--ink-faint);
+            transform: translateY(-50%);
+        }
+        .bar-chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 24px;
+            width: 100%;
+            padding-left: 48px;
+            position: relative;
+            z-index: 1;
+        }
+        .bar-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            max-width: 100px;
+        }
+        .bar-fill {
+            width: 100%;
+            height: var(--bar-height);
+            background: var(--paper-dark);
+            border-radius: 3px 3px 0 0;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            animation: growBar 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+            transition: transform 0.2s;
+        }
+        .bar-fill:hover {
+            transform: scaleY(1.03);
+            transform-origin: bottom;
+        }
+        .bar-fill.accent {
+            background: linear-gradient(180deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+        }
+        .bar-fill.projected {
+            background: linear-gradient(180deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+            background-image: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 4px,
+                rgba(255,255,255,0.1) 4px,
+                rgba(255,255,255,0.1) 8px
+            ), linear-gradient(180deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+        }
+        @keyframes growBar {
+            from { height: 0; }
+        }
+        .bar-value {
+            font-family: 'Baloo 2', 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink-soft);
+            position: absolute;
+            top: -24px;
+            white-space: nowrap;
+        }
+        .bar-fill.accent .bar-value,
+        .bar-fill.projected .bar-value {
+            color: var(--emerald-deep);
+        }
+        .bar-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink-muted);
+            margin-top: 10px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        @media (max-width: 500px) {
+            .bar-chart-bars { gap: 12px; padding-left: 36px; }
+            .bar-chart-area { height: 220px; }
+            .bar-label { font-size: 10px; }
+            .gridline span { font-size: 10px; }
         }
 
         /* ═══ COMPARISON TABLE ═══ */
@@ -792,12 +907,42 @@ flowchart LR
         </div>
 
         <div class="diagram-frame reveal">
-            <div class="mermaid">
-xychart-beta
-    title "BSW Attendance Growth"
-    x-axis ["3 Yrs Ago", "2 Yrs Ago", "2025", "2026 Est."]
-    y-axis "Attendees" 0 --> 6000
-    bar [500, 2000, 4000, 5000]
+            <div class="bar-chart" role="img" aria-label="BSW attendance growth chart showing 500 three years ago to an expected 5,000 in 2026">
+                <div class="bar-chart-title">BSW Attendance Growth</div>
+                <div class="bar-chart-area">
+                    <div class="bar-chart-gridlines">
+                        <div class="gridline" style="bottom: 0%;"><span>0</span></div>
+                        <div class="gridline" style="bottom: 33.3%;"><span>2,000</span></div>
+                        <div class="gridline" style="bottom: 66.6%;"><span>4,000</span></div>
+                        <div class="gridline" style="bottom: 100%;"><span>6,000</span></div>
+                    </div>
+                    <div class="bar-chart-bars">
+                        <div class="bar-col">
+                            <div class="bar-fill" style="--bar-height: 23px;">
+                                <span class="bar-value">500</span>
+                            </div>
+                            <div class="bar-label">3 Yrs Ago</div>
+                        </div>
+                        <div class="bar-col">
+                            <div class="bar-fill" style="--bar-height: 93px;">
+                                <span class="bar-value">2,000</span>
+                            </div>
+                            <div class="bar-label">2 Yrs Ago</div>
+                        </div>
+                        <div class="bar-col">
+                            <div class="bar-fill accent" style="--bar-height: 187px;">
+                                <span class="bar-value">4,000</span>
+                            </div>
+                            <div class="bar-label">2025</div>
+                        </div>
+                        <div class="bar-col">
+                            <div class="bar-fill accent projected" style="--bar-height: 233px;">
+                                <span class="bar-value">~5,000</span>
+                            </div>
+                            <div class="bar-label">2026 Est.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="diagram-caption">Eight-fold growth in three years — from ~500 to an expected 4,000–5,000 attendees.</div>
         </div>
@@ -837,6 +982,12 @@ xychart-beta
                 <div class="tier-label">Social Event</div>
                 <div class="tier-amount">$6,000</div>
                 <div class="tier-detail">Funds an evening event. We'd prefer to host our own on our terms.</div>
+            </div>
+            <div class="tier-card faded">
+                <div class="tier-badge no">Overkill</div>
+                <div class="tier-label">Community Champion</div>
+                <div class="tier-amount">$10,000</div>
+                <div class="tier-detail">Event sponsor tier (max 3). Logo placement, signage, swag, recognition at signature events, and private Friends of BSW social.</div>
             </div>
             <div class="tier-card faded">
                 <div class="tier-badge no">Too much</div>
